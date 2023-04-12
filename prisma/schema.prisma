@@ -15,6 +15,29 @@ model Product {
   name String
   image String
   description String
+  price Int
+  order PronductOnOrder[]
 
   @@map("products")
+}
+
+model Oder {
+  id Int @id@default(autoincrement())
+  name String
+  phoneNumber String
+  date DateTime
+  amount Int
+  itens PronductOnOrder[]
+
+  @@map("orders")
+}
+
+model PronductOnOrder {
+  product Product @relation(fields: [productId], references: [id])
+  productId Int
+  oder Oder @relation(fields: [orderId], references: [id])
+  orderId Int
+  assignedAt DateTime @default(now())
+
+  @@id([orderId, productId])
 }
