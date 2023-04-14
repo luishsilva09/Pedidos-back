@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as productController from "../controllers/productController";
 import { schemaValidate } from "../middlewares/schemaValidateMiddleware";
-import { newProductSchema } from "../schemas/product";
+import { newProductSchema } from "../schemas/productSchemas";
 
 const productsRoutes = Router();
 
