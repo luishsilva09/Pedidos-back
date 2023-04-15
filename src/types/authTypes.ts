@@ -4,3 +4,8 @@ export interface InewUser {
   password: string;
   repeatPassword: string;
 }
+
+export interface IsigninData {
+  email: string;
+  password: string;
+}

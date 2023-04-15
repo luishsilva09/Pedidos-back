@@ -5,7 +5,11 @@ import * as authController from "../controllers/authController";
 
 const authRoutes = Router();
 //signin
-authRoutes.post("/users/signin", schemaValidate(signinSchema));
+authRoutes.post(
+  "/users/signin",
+  schemaValidate(signinSchema),
+  authController.signin
+);
 
 //signup
 authRoutes.post(
