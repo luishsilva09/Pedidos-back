@@ -33,5 +33,8 @@ export async function signin(userData: IsigninData) {
 
   if (!confirmPassword) throw unauthorizedError();
 
-  return JWT.sign(user, JWT_SECRET);
+  return JWT.sign(
+    { id: user.id, name: user.name, email: user.email },
+    JWT_SECRET
+  );
 }
