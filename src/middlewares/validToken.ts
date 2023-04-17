@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { unauthorizedError } from "../utils/errorUtils";
 
 dotenv.config();
-const secretKey = process.env.SECRET_KEY || "";
+const secretKey = process.env.JWT_SECRET || "";
 
 export default async function validToken(
   req: Request,
