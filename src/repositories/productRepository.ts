@@ -5,3 +5,7 @@ import { db } from "../dbStrategy/db";
 export async function create(productData: Prisma.ProductCreateInput) {
   return await db.product.create({ data: productData });
 }
+
+export async function findAll() {
+  return await db.product.findMany();
+}
