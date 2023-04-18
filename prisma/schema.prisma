@@ -16,6 +16,7 @@ model Product {
   image String
   description String
   price Int
+  isVisible Boolean @default(true)
   order PronductOnOrder[]
 
   @@map("products")
