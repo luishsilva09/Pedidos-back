@@ -9,3 +9,11 @@ export async function create(productData: Prisma.ProductCreateInput) {
 export async function findAll() {
   return await db.product.findMany();
 }
+
+export async function deleteById(productId: number) {
+  return await db.product.delete({ where: { id: productId } });
+}
+
+export async function findById(productId: number) {
+  return await db.product.findUnique({ where: { id: productId } });
+}

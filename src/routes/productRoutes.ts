@@ -29,6 +29,11 @@ productsRoutes.post("/product/visibility:productId");
 productsRoutes.get("/product/:productId");
 
 //delete product
-productsRoutes.delete("/product/delete/:productId");
+productsRoutes.delete(
+  "/product/delete/:productId",
+  validToken,
+  validAdmin,
+  productController.deleteById
+);
 
 export default productsRoutes;

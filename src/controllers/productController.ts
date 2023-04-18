@@ -10,3 +10,9 @@ export async function findAll(req: Request, res: Response) {
   const data = await productService.listProducts();
   res.status(200).send(data);
 }
+
+export async function deleteById(req: Request, res: Response) {
+  const productId = Number(req.params.productId);
+  await productService.deleteById(productId);
+  res.status(200).send("Deletado com sucesso");
+}
