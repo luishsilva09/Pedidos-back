@@ -15,3 +15,9 @@ export async function deleteById(productId: number) {
     throw notFoundError("Produto não encontrado");
   return await productRepository.deleteById(productId);
 }
+
+export async function findById(productId: number) {
+  const productData = await productRepository.findById(productId);
+  if (!productData) throw notFoundError("Produto não encontrado");
+  return productData;
+}

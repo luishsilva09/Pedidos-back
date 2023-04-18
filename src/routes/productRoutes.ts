@@ -26,7 +26,7 @@ productsRoutes.get("/product", productController.findAll);
 productsRoutes.post("/product/visibility:productId");
 
 //get one product information
-productsRoutes.get("/product/:productId");
+productsRoutes.get("/product/:productId", productController.findById);
 
 //delete product
 productsRoutes.delete(

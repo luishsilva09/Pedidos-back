@@ -16,3 +16,9 @@ export async function deleteById(req: Request, res: Response) {
   await productService.deleteById(productId);
   res.status(200).send("Deletado com sucesso");
 }
+
+export async function findById(req: Request, res: Response) {
+  const productId = Number(req.params.productId);
+  const data = await productService.findById(productId);
+  res.status(200).send(data);
+}
