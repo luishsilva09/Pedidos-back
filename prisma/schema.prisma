@@ -22,7 +22,7 @@ model Product {
   @@map("products")
 }
 
-model Oder {
+model Order {
   id Int @id@default(autoincrement())
   name String
   phoneNumber String
@@ -36,7 +36,7 @@ model Oder {
 model PronductOnOrder {
   product Product @relation(fields: [productId], references: [id])
   productId Int
-  oder Oder @relation(fields: [orderId], references: [id])
+  order Order @relation(fields: [orderId], references: [id])
   orderId Int
   assignedAt DateTime @default(now())
 
