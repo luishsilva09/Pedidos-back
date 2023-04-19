@@ -7,7 +7,7 @@ const orderRoutes = Router();
 orderRoutes.post("/order/new", orderController.newOrder);
 
 //list orders
-orderRoutes.get("/order");
+orderRoutes.get("/order", orderController.listOrders);
 
 //get one order
 orderRoutes.get("/order/:orderId");

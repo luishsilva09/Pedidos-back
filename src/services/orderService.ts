@@ -1,5 +1,15 @@
 import * as orderRepository from "../repositories/orderRepository";
 
 export async function create(data: any) {
-  await orderRepository.create(data);
+  const insertData = {
+    name: data.name,
+    phoneNumber: data.phoneNumber,
+    date: data.date,
+    amount: data.amount,
+  };
+  await orderRepository.create(insertData);
+}
+
+export async function listOrders() {
+  return await orderRepository.listOrders();
 }
