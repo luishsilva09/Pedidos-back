@@ -1,9 +1,10 @@
 import { Router } from "express";
+import * as orderController from "../controllers/orderController";
 
 const orderRoutes = Router();
 
 //new order
-orderRoutes.post("/order/new");
+orderRoutes.post("/order/new", orderController.newOrder);
 
 //list orders
 orderRoutes.get("/order");
