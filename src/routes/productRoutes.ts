@@ -17,13 +17,18 @@ productsRoutes.post(
 );
 
 //update product
-productsRoutes.put(`/product/edit/:productId`);
+productsRoutes.put(
+  `/product/edit/:productId`,
+  validToken,
+  validAdmin,
+  productController.update
+);
 
 //list products
 productsRoutes.get("/product", productController.findAll);
 
 //edit visibiliti
-productsRoutes.post("/product/visibility:productId");
+productsRoutes.post("/product/visibility/:productId", validToken, validAdmin);
 
 //get one product information
 productsRoutes.get("/product/:productId", productController.findById);
