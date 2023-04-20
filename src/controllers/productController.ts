@@ -28,3 +28,9 @@ export async function update(req: Request, res: Response) {
   const data = req.body;
   res.status(200).send("Atualizado com sucesso");
 }
+
+export async function editVisibility(req: Request, res: Response) {
+  const productId = Number(req.params.productId);
+  const data = req.body;
+  res.status(200).send("Atualizado com sucesso");
+}

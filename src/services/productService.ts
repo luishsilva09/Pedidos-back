@@ -28,3 +28,10 @@ export async function update(productId: number, data: productCreate) {
   if (!productData) throw notFoundError("Produto não encontrado");
   await productRepository.update(data, productId);
 }
+
+export async function editVisibility(productId: number) {
+  const productData = await productRepository.findById(productId);
+  if (!productData) throw notFoundError("Produto não encontrado");
+
+  await productRepository.editVisibility(productId, productData);
+}

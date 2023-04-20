@@ -28,7 +28,12 @@ productsRoutes.put(
 productsRoutes.get("/product", productController.findAll);
 
 //edit visibiliti
-productsRoutes.post("/product/visibility/:productId", validToken, validAdmin);
+productsRoutes.post(
+  "/product/visibility/:productId",
+  validToken,
+  validAdmin,
+  productController.editVisibility
+);
 
 //get one product information
 productsRoutes.get("/product/:productId", productController.findById);

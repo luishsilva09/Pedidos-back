@@ -25,3 +25,13 @@ export async function update(data: productCreate, productId: number) {
     where: { id: productId },
   });
 }
+
+export async function editVisibility(
+  productId: number,
+  productData: productCreate
+) {
+  return await db.product.update({
+    data: { isVisible: !productData.isVisible },
+    where: { id: productId },
+  });
+}
